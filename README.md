@@ -42,7 +42,7 @@
 Prague, Czech Republic, Tuesday, Jan 19th 2016. Co-Located with HiPEAC 2016.
 
 ```
-@inproceedings{cummins2016a,
+@inproceedings{cummins2016b,
     author    = "Cummins, Chris and Petoumenos, Pavlos and Steuwer, Michel and Leather, Hugh",
     title     = "Towards Collaborative Performance Tuning of Algorithmic Skeletons",
     booktitle = "High-Level Programming for Heterogeneous and Hierarchical Parallel Systems (HLPGPU)",
