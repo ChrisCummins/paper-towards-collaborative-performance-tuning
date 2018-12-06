@@ -8,19 +8,19 @@
 \usepackage{etoolbox}
 \usepackage{silence}
 \usepackage[%
-    backend=biber,
-    style=numeric-comp,
-    sorting=none,
-    sortcites=true,
-    block=none,
-    indexing=false,
-    citereset=none,
-    isbn=false,
-    url=true,
-    doi=false,
-    natbib=true,
-    maxbibnames=99
-  ]{biblatex}
+backend=biber,
+style=numeric-comp,
+sorting=none,
+sortcites=true,
+block=none,
+indexing=false,
+citereset=none,
+isbn=false,
+url=true,
+doi=false,
+natbib=true,
+maxbibnames=99
+]{biblatex}
 
 \WarningFilter{biblatex}{Patching footnotes failed}
 
@@ -28,8 +28,8 @@
 \newcommand{\BibResourceGlobal}{../../../library.bib}
 \newcommand{\BibResourceLocal}{refs.bib}
 \IfFileExists{\BibResourceGlobal}
-  {\newcommand{\BibResource}{\BibResourceGlobal}}
-  {\newcommand{\BibResource}{\BibResourceLocal}}
+{\newcommand{\BibResource}{\BibResourceGlobal}}
+{\newcommand{\BibResource}{\BibResourceLocal}}
 \addbibresource{\BibResource}
 
 \usepackage[title, titletoc]{appendix}
@@ -49,14 +49,14 @@
 \usepackage{courier}
 
 \lstset{frame=bt,
-        breaklines=true,
-        captionpos=b,
-        numbers=left,
-        basicstyle=\scriptsize\ttfamily,
-        showstringspaces=false,
-        numberstyle=\tiny,
-        upquote=true,
-        commentstyle=\bfseries}
+breaklines=true,
+captionpos=b,
+numbers=left,
+basicstyle=\scriptsize\ttfamily,
+showstringspaces=false,
+numberstyle=\tiny,
+upquote=true,
+commentstyle=\bfseries}
 
 \lstset{escapeinside={(*@}{@*)}}
 
@@ -76,9 +76,9 @@
 \expandafter\def\csname ver@subfig.sty\endcsname{}
 
 \newenvironment{myalignat}[1]{%
-  \setlength{\abovedisplayskip}{-.7\baselineskip}%
-  \setlength{\abovedisplayshortskip}{\abovedisplayskip}%
-  \start@align\z@\st@rredtrue#1
+\setlength{\abovedisplayskip}{-.7\baselineskip}%
+\setlength{\abovedisplayshortskip}{\abovedisplayskip}%
+\start@align\z@\st@rredtrue#1
 }%
 {\endalign}
 
@@ -97,57 +97,57 @@
 \usepackage{pgfgantt}
 
 \newganttchartelement*{mymilestone}{
-  mymilestone/.style={
-    shape=diamond,
-    inner sep=2pt,
-    draw=black,
-    top color=black,
-    bottom color=black,
-  }
+mymilestone/.style={
+shape=diamond,
+inner sep=2pt,
+draw=black,
+top color=black,
+bottom color=black,
+}
 }
 
 \usetikzlibrary{shapes,arrows,shadows,fit,backgrounds}
 \tikzstyle{decision} = [diamond,
-                        draw,
-                        text width=4.5em,
-                        text badly centered,
-                        node distance=3cm,
-                        inner sep=0pt]
+draw,
+text width=4.5em,
+text badly centered,
+node distance=3cm,
+inner sep=0pt]
 \tikzstyle{block}    = [rectangle,
-                        draw,
-                        text width=5em,
-                        text centered,
-                        node distance=3cm,
-                        minimum height=4em,
-                        inner sep=.2cm]
+draw,
+text width=5em,
+text centered,
+node distance=3cm,
+minimum height=4em,
+inner sep=.2cm]
 \tikzstyle{line}     = [draw, -latex']
 
 \newcount\dirtree@lvl
 \newcount\dirtree@plvl
 \newcount\dirtree@clvl
 \def\dirtree@growth{%
-  \ifnum\tikznumberofcurrentchild=1\relax
-    \global\advance\dirtree@plvl by 1
-    \expandafter\xdef\csname dirtree@p@\the\dirtree@plvl\endcsname{\the\dirtree@lvl}
-  \fi
-  \global\advance\dirtree@lvl by 1\relax
-  \dirtree@clvl=\dirtree@lvl
-  \advance\dirtree@clvl by -\csname dirtree@p@\the\dirtree@plvl\endcsname
-  \pgf@xa=0.33cm\relax
-  \pgf@ya=-\baselineskip\relax
-  \pgf@ya=\dirtree@clvl\pgf@ya
-  \pgftransformshift{\pgfqpoint{\the\pgf@xa}{\the\pgf@ya}}%
-  \ifnum\tikznumberofcurrentchild=\tikznumberofchildren
-    \global\advance\dirtree@plvl by -1
-  \fi
+\ifnum\tikznumberofcurrentchild=1\relax
+\global\advance\dirtree@plvl by 1
+\expandafter\xdef\csname dirtree@p@\the\dirtree@plvl\endcsname{\the\dirtree@lvl}
+\fi
+\global\advance\dirtree@lvl by 1\relax
+\dirtree@clvl=\dirtree@lvl
+\advance\dirtree@clvl by -\csname dirtree@p@\the\dirtree@plvl\endcsname
+\pgf@xa=0.33cm\relax
+\pgf@ya=-\baselineskip\relax
+\pgf@ya=\dirtree@clvl\pgf@ya
+\pgftransformshift{\pgfqpoint{\the\pgf@xa}{\the\pgf@ya}}%
+\ifnum\tikznumberofcurrentchild=\tikznumberofchildren
+\global\advance\dirtree@plvl by -1
+\fi
 }
 \tikzset{
-  dirtree/.style={
-    growth function=\dirtree@growth,
-    every node/.style={anchor=north},
-    every child node/.style={anchor=west},
-    edge from parent path={(\tikzparentnode\tikzparentanchor) |- (\tikzchildnode\tikzchildanchor)}
-  }
+dirtree/.style={
+growth function=\dirtree@growth,
+every node/.style={anchor=north},
+every child node/.style={anchor=west},
+edge from parent path={(\tikzparentnode\tikzparentanchor) |- (\tikzchildnode\tikzchildanchor)}
+}
 }
 
 \usepackage[underline=false]{pgf-umlsd}
@@ -172,11 +172,11 @@
 \def\wr@pletters#1#2\@nil{#1\allowbreak\if&#2&\else\wr@pletters#2\@nil\fi}
 
 \newcommand{\centredtitle}[1]{
-  \begin{center}
-    \large
-    \vspace{0.9cm}
-    \textbf{#1}
-  \end{center}}
+\begin{center}
+  \large
+  \vspace{0.9cm}
+  \textbf{#1}
+\end{center}}
 
 \usepackage{hyperref}
 \hypersetup{pdfborder={0 0 0}}
